@@ -1,0 +1,23 @@
+automate_colony_planet = {
+	category = "planet_automation_designation_construction"
+
+	available = {
+		has_designation = col_default
+	}
+
+	prio_districts = {
+		district_generator
+		district_mining
+		district_farming
+		district_industrial
+	}
+
+	buildings = {
+		1 = {
+			building = building_capital
+			available = {
+				always = yes
+			}
+		}
+	}
+}

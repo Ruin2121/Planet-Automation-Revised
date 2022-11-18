@@ -1,0 +1,14 @@
+
+planet_automation_test_1 = {
+	available = {
+		exists = owner
+		owner = {
+			is_ai = no
+		}
+	}
+}
+
+#TEST destroy_trigger = { <conditions> } THIS COULD BE BIG IF IT WORKS
+
+#has_trade_designation = yes
+#it's a scripted trigger, common/scripted_triggers/00_scripted_triggers_ai.txt, line 357

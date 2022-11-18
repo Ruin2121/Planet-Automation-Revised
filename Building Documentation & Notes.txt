@@ -1,0 +1,894 @@
+
+CAPITAL BUILDINGS = {
+	Regular/Mechanical/ = {
+		(T1) Reassembled Ship Shelter = {
+			From = Vanilla
+			ID = building_colony_shelter
+			Tier = 1
+			Prerequisites = {
+				is_regular_empire = yes
+				is_fallen_empire = no
+				NOT = {
+					has_modifier = resort_colony
+					has_modifier = slave_colony
+				}
+			}
+			Upgrades = {
+				From = NOTHING
+				To = Planetary Administration (building_capital)
+			}
+		}
+		(T2) Planetary Administration = {
+			From = Vanilla
+			ID = building_capital
+			Tier = 2
+			Prerequisites = {
+				is_regular_empire = yes
+				is_fallen_empire = no
+				NOT = {
+					has_modifier = resort_colony
+					has_modifier = slave_colony
+				}
+				num_pops >= 10
+				tech_planetary_government
+			}
+			Upgrades = {
+				From = Reassembled Ship Shelter (building_colony_shelter)
+				To = Planetary Capital (building_major_capital)
+			}
+		}
+		(T3) Planetary Capital = {
+			From = Vanilla
+			ID = building_major_capital
+			Tier = 3
+			Prerequisites = {
+				is_regular_empire = yes
+				is_fallen_empire = no
+				NOT = {
+					has_modifier = resort_colony
+					has_modifier = slave_colony
+				}
+				num_pops >= 25
+				tech_colonial_centralization
+			}
+			Upgrades = {
+				From = Planetary Administration (building_capital)
+				To = System Capital-Complex (building_system_capital)
+			}
+		}
+		(T4) System Capital-Complex = {
+			From = Vanilla
+			ID = building_system_capital
+			Tier = 4
+			Prerequisites = {
+				is_regular_empire = yes
+				is_fallen_empire = no
+				NOT = {
+					has_modifier = resort_colony
+					has_modifier = slave_colony
+				}
+				num_pops >= 50
+				tech_galactic_administration
+			}
+			Upgrades = {
+				From = Planetary Capital (building_major_capital)
+				To = Imperial Palace (building_imperial_capital)
+			}
+		}
+		(T4) Imperial Palace = {
+			From = Vanilla
+			ID = building_imperial_capital
+			Tier = 4
+			Prerequisites = {
+				is_regular_empire = yes
+				is_galactic_emperor = yes
+				planet = {
+					is_capital = yes
+				}
+				num_pops >= 50
+			}
+			Upgrades = {
+				From = System Capital-Complex (building_system_capital)
+				To = NOTHING
+			}
+		}
+	}
+	Machine = {
+		(T1) Deployment Post = {
+			From = Vanilla
+			ID = building_deployment_post
+			Tier = 1
+			Prerequisites = {
+				is_machine_empire = yes
+				is_fallen_empire = no
+			}
+			Upgrades = {
+				From = NOTHING
+				To = Administrative Array (building_machine_capital)
+			}
+		}
+		(T2) Administrative Array = {
+			From = Vanilla
+			ID = building_machine_capital
+			Tier = 2
+			Prerequisites = {
+				is_machine_empire = yes
+				is_fallen_empire = no
+				num_pops >= 10
+				tech_planetary_government
+			}
+			Upgrades = {
+				From = Deployment Post (building_deployment_post)
+				To = Planetary Processor (building_machine_major_capital)
+			}
+		}
+		(T3) Planetary Processor = {
+			From = Vanilla
+			ID = building_machine_major_capital
+			Tier = 3
+			Prerequisites = {
+				is_machine_empire = yes
+				is_fallen_empire = no
+				num_pops >= 25
+				tech_colonial_centralization
+			}
+			Upgrades = {
+				From = Administrative Array (building_machine_capital)
+				To = Primary Nexus (building_machine_system_capital)
+			}
+		}
+		(T4) Primary Nexus = {
+			From = Vanilla
+			ID = building_machine_system_capital
+			Tier = 4
+			Prerequisites = {
+				is_machine_empire = yes
+				is_fallen_empire = no
+				num_pops >= 50
+				tech_galactic_administration
+			}
+			Upgrades = {
+				From = Planetary Processor (building_machine_major_capital)
+				To = Imperial Center (building_imperial_machine_capital)
+			}
+		}
+		(T4) Imperial Center = {
+			From = Vanilla
+			ID = building_imperial_machine_capital
+			Tier = 4
+			Prerequisites = {
+				is_machine_empire = yes
+				is_galactic_emperor = yes
+				planet = {
+					is_capital = yes
+					}
+				num_pops >= 50
+			}
+			Upgrades = {
+				From = Primary Nexus (building_machine_system_capital)
+				To = NOTHING
+			}
+		}
+	}
+	Hive = {
+		(T2) Hive Core = {
+			From = Vanilla
+			ID = building_hive_capital
+			Tier = 2
+			Prerequisites = {
+				is_hive_empire = yes
+				is_fallen_empire = no
+				tech_planetary_government
+			}
+			Upgrades = {
+				From = NOTHING
+				To = Hive Nexus (building_hive_major_capital)
+			}
+		}
+		(T4) Hive Nexus = {
+			From = Vanilla
+			ID = building_hive_major_capital
+			Tier = 4
+			Prerequisites = {
+				is_hive_empire = yes
+				is_fallen_empire = no
+				num_pops >= 25
+				tech_colonial_centralization
+			}
+			Upgrades = {
+				From = Hive Core (building_hive_capital)
+				To = Imperial Complex (building_imperial_hive_capital)
+			}
+		}
+		(T4) Imperial Complex = {
+			From = Vanilla
+			ID = building_imperial_hive_capital
+			Tier = 4
+			Prerequisites = {
+				is_hive_empire = yes
+				is_galactic_emperor = yes
+				planet = {
+					is_capital = yes
+				}
+				num_pops >= 50
+			}
+			Upgrades = {
+				From = Hive Nexus (building_hive_major_capital)
+				To = NOTHING
+			}
+		}
+	}
+	Generic Habitat = {
+		(T1) Habitat Administration = {
+			From = Vanilla
+			ID = building_hab_capital
+			Tier = 1
+			Prerequisites = {
+				uses_habitat_capitals = yes
+				is_fallen_empire = no
+			}
+			Upgrades = {
+				From = NOTHING
+				To = Habitat Central Control (building_hab_major_capital)
+			}
+		}
+		(T2) Habitat Central Control = {
+			From = Vanilla
+			ID = building_hab_major_capital
+			Tier = 2
+			Prerequisites = {
+				uses_habitat_capitals = yes
+				is_fallen_empire = no
+				num_pops >= 10
+			}
+			Upgrades = {
+				From = Habitat Administration (building_hab_capital)
+				To = NOTHING
+			}
+		}
+	}
+	Decision Worlds = {
+		Resort Worlds = {
+			(T1) Resort Administration = {
+				From = Vanilla
+				ID = building_resort_capital
+				Tier = 1
+				Prerequisites = {
+					has_modifier = resort_colony
+				}
+				Upgrades = {
+					From = NOTHING
+					To = Resort Capital-Complex (building_resort_major_capital)
+				}
+			}
+			(T2) Resort Capital-Complex = {
+				From = Vanilla
+				ID = building_resort_major_capital
+				Tier = 2
+				Prerequisites = {
+					has_modifier = resort_colony
+					num_pops >= 20
+				}
+				Upgrades = {
+					From = Resort Administration (building_resort_capital)
+					To = NOTHING
+				}
+			}
+		}
+		Thrall World = {
+			(T1) Governor's Palace = {
+				From = Vanilla
+				ID = building_slave_capital
+				Tier = 1
+				Prerequisites = {
+					has_modifier = slave_colony
+				}
+				Upgrades = {
+					From = NOTHING
+					To = Governor's Estates (building_slave_major_capital)
+				}
+			}
+			(T2) Governor's Estates = {
+				From = Vanilla
+				ID = building_slave_major_capital
+				Tier = 2
+				Prerequisites = {
+					has_modifier = slave_colony
+					num_pops >= 20
+				}
+				Upgrades = {
+					From = Governor's Palace (building_slave_capital)
+					To = NOTHING
+				}
+			}
+		}
+	}
+	Fallen Empires = { #Need to merge with other categories
+		(T5) Ancient Control Center = {
+			From = Vanilla
+			ID = building_ancient_control_center
+			Tier = 5
+			Prerequisites = {
+				is_fallen_machine_empire = yes
+			}
+			Upgrades = {
+				From = NOTHING
+				To = NOTHING
+			}
+		}
+		(T5) Ancient Palace = {
+			From = Vanilla
+			ID = building_ancient_palace
+			Tier = 5
+			Prerequisites = {
+				is_fallen_empire = yes
+			}
+			Upgrades = {
+				From = NOTHING
+				To = NOTHING
+			}
+		}
+		(T5) Habitat Administration = {
+			From = Vanilla
+			ID = building_hab_fe_capital
+			Tier = 5
+			Prerequisites = {
+				is_planet_class = pc_habitat
+				is_fallen_empire = yes
+			}
+			Upgrades = {
+				From = NOTHING
+				To = NOTHING
+			}
+		}
+		(T5) Xeno Preserve = {
+			From = Vanilla
+			ID = building_fe_xeno_zoo
+			Tier = 5
+			Prerequisites = {
+				is_fallen_empire = yes
+				is_xenophile = yes
+			}
+			Upgrades = {
+				From = NOTHING
+				To = NOTHING
+			}
+		}
+	}
+}
+POP ASSEMBLY/GROWTH/TRANSFORMATION/ = {
+	Robot Assembly = {
+		Robot Assembly Plants = {
+			From = Vanilla
+			ID = building_robot_assembly_plant
+			Tier = 0
+			Prerequisites = {
+				is_regular_empire = yes
+				NOT = {
+					has_policy_flag = robots_outlawed
+					has_modifier = slave_colony
+				}
+				tech_robotic_workers
+			}
+			Upgrades = {
+				From = NOTHING
+				To = NOTHING
+			}
+		}
+		(T1) Machine Assembly Plants = {
+			From = Vanilla
+			ID = building_machine_assembly_plant
+			Tier = 1
+			Prerequisites = {
+				is_machine_empire = yes
+			}
+			Upgrades = {
+				From = NOTHING
+				To = Machine Assembly Complex (building_machine_assembly_complex)
+			}
+		}
+		(T3) Machine Assembly Complex = {
+			From = Vanilla
+			ID = building_machine_assembly_complex
+			Tier = 3
+			Prerequisites = {
+				is_machine_empire = yes
+				tech_mega_assembly
+			}
+			Upgrades = {
+				From = Machine Assembly Plants (building_machine_assembly_plant)
+				To = NOTHING
+			}
+		}
+		Hyper Lubrication Basin = {
+			From = Vanilla
+			ID = building_toxic_bath_machine
+			Tier = 0
+			Prerequisites = {
+				is_machine_empire = yes
+				has_valid_civic = civic_machine_toxic_baths
+			}
+			Upgrades = {
+				From = NOTHING
+				To = NOTHING
+			}
+		}
+	}
+	Organic Assembly = {
+		Spawning Pools = {
+			From = Vanilla
+			ID = building_spawning_pool
+			Tier = 0
+			Prerequisites = {
+				is_hive_empire = yes
+				NOT = { 
+					has_origin = origin_progenitor_hive
+				}
+			}
+			Upgrades = {
+				From = NOTHING
+				To = NOTHING
+			}
+		}
+		Offspring Nest = {
+			From = Vanilla
+			ID = building_offspring_nest
+			Tier = 0
+			Prerequisites = {
+				has_origin = origin_progenitor_hive
+			}
+			Upgrades = {
+				From = NOTHING
+				To = NOTHING
+			}
+		}
+		Clone Vats = {
+			From = Vanilla
+			ID = building_clone_vats
+			Tier = 0
+			Prerequisites = {
+				has_ascension_perk = ap_engineered_evolution
+				NOT = { 
+					has_modifier = resort_colony
+				}
+			}
+			Upgrades = {
+				From = NOTHING
+				To = NOTHING
+			}
+		}
+		Ancient Clone Vat = {
+			From = Vanilla
+			ID = building_clone_army_clone_vat
+			Tier = 0
+			Prerequisites = {
+				has_origin = origin_clone_army
+				NOT = {
+					has_country_flag = clone_army_fertility_unlocked
+				}
+			}
+			Upgrades = {
+				From = NOTHING
+				To = NOTHING
+			}
+		}
+		Posthumous Employment Center = {
+			From = Vanilla
+			ID = building_posthumous_employment_center
+			Tier = 0
+			Prerequisites = {
+				is_regular_empire = yes
+				has_valid_civic = civic_permanent_employment
+				has_upgraded_capital = yes
+			}
+			Upgrades = {
+				From = NOTHING
+				To = NOTHING
+			}
+		}
+		Mutagenic Permutation Pool = {
+			From = Vanilla
+			ID = building_toxic_bath_hive
+			Tier = 0
+			Prerequisites = {
+				is_hive_empire = yes
+				has_valid_civic = civic_hive_toxic_baths
+			}
+			Upgrades = {
+				From = NOTHING
+				To = NOTHING
+			}
+		}
+	}
+	Pop Growth = {
+		(T1) Gene Clinics = {
+			From = Vanilla
+			ID = building_clinic
+			Tier = 1
+			Prerequisites = {
+				is_regular_empire = yes
+				NOT = {
+					has_modifier = slave_colony
+				}
+				tech_frontier_health
+			}
+			Upgrades = {
+				From = NOTHING
+				To = Cyto-Revitalization Centers (building_hospital)
+			}
+		}
+		(T2) Cyto-Revitalization Centers = {
+			From = Vanilla
+			ID = building_hospital
+			Tier = 2
+			Prerequisites = {
+				has_building = building_clinic
+				has_upgraded_capital = yes
+				tech_frontier_hospital
+			}
+			Upgrades = {
+				From = Gene Clinics (building_clinic)
+				To = NOTHING
+			}
+		}
+		Mutagenic Spa = {
+			From = Vanilla
+			ID = building_toxic_bath
+			Tier = 0
+			Prerequisites = {
+				NOT = {
+					has_modifier = slave_colony
+				}
+				is_regular_empire = yes
+				OR = {
+					has_valid_civic = civic_toxic_baths
+					has_valid_civic = civic_corporate_toxic_baths
+				}
+			}
+			Upgrades = {
+				From = NOTHING
+				To = NOTHING
+			}
+		}
+	}
+	Pop Conversion = {
+		(T1) Chamber of Elevation = {
+			From = Vanilla
+			ID = building_necrophage_elevation_chamber
+			Tier = 1
+			Prerequisites = {
+				has_origin = origin_necrophage
+				has_trait = trait_necrophage
+				NOT = {
+					has_valid_civic = civic_fanatic_purifiers
+					has_valid_civic = civic_hive_devouring_swarm
+					has_modifier = planet_culture_shock
+					is_planet_class = pc_hive (If is_hive_empire = no)
+					is_planet_class = pc_machine
+				}
+			}
+			Upgrades = {
+				From = NOTHING
+				To = House of Apotheosis (building_necrophage_house_of_apotheosis)
+			}
+		}
+		(T2) House of Apotheosis = {
+			From = Vanilla
+			ID = building_necrophage_house_of_apotheosis
+			Tier = 2
+			Prerequisites = {
+				has_origin = origin_necrophage
+				has_trait = trait_necrophage
+				NOT = {
+					has_valid_civic = civic_fanatic_purifiers
+					has_valid_civic = civic_hive_devouring_swarm
+				}
+			}
+			Upgrades = {
+				From = Chamber of Elevation (building_necrophage_elevation_chamber)
+				To = NOTHING
+			}
+		}
+	}
+}
+MISC GOVERNMENT = {
+	Noble Estates = {
+		From = Vanilla
+		ID = building_noble_estates
+		Tier = 0
+		Prerequisites = {
+			owner = {
+				has_valid_civic = civic_aristocratic_elite
+			}
+			NOT = {
+				has_modifier = slave_colony
+			}
+			has_upgraded_capital = yes
+		}
+		Upgrades = {
+			From = NOTHING
+			To = NOTHING
+		}
+	}
+	Slave Processing Facility = {
+		From = Vanilla
+		ID = building_slave_processing
+		Tier = 0
+		Prerequisites = {
+			owner = {
+				is_regular_empire = yes
+				has_policy_flag = slavery_allowed
+			}
+			NOT = {
+				has_modifier = resort_colony
+			}
+			has_upgraded_capital = yes
+			tech_neural_implants
+		}
+		Upgrades = {
+			From = NOTHING
+			To = NOTHING
+		}
+	}
+	Order's Keep = {
+		From = Vanilla
+		ID = building_order_keep
+		Tier = 0
+		Prerequisites = {
+			empire_limit = 1
+			owner = {
+				has_origin = origin_toxic_knights
+				NOT = {
+					has_country_flag = quest_abandoned
+				}
+			}
+			has_planet_flag = toxic_knights_habitat
+		}
+		Upgrades = {
+			From = NOTHING
+			To = NOTHING
+		}
+	}
+	Order's Castle = {
+		From = Vanilla
+		ID = building_order_castle
+		Tier = 0
+		Prerequisites = {
+			can_build = no
+		}
+		Upgrades = {
+			FROM = NOTHING
+			To = NOTHING
+		}
+	}
+	(T2) Embassy Complex = {
+		From = Vanilla
+		ID = building_embassy
+		Tier = 2
+		Prerequisites = {
+			planet limit = 1
+			owner = {
+				is_regular_empire = yes
+			}
+			planet = {
+				is_capital = yes
+			}
+			NOT = {
+				has_modifier = resort_colony
+				has_modifier = slave_colony
+			}
+			has_upgraded_capital = yes
+			tech_xeno_diplomacy
+		}
+		Upgrades = {
+			From = NOTHING
+			To = (building_grand_embassy)
+		}
+	}
+building_grand_embassy
+building_akx_worm_3
+building_ancient_cryo_chamber
+
+Crime/Deviancy/
+building_precinct_house
+building_hall_judgment
+building_sentinel_posts
+building_psi_corps
+building_overseer_homes
+
+Terraforming
+building_gaiaseeders_1
+building_gaiaseeders_2
+building_gaiaseeders_3
+building_gaiaseeders_4
+building_coordinated_fulfillment_center_1
+building_coordinated_fulfillment_center_2
+
+Resource Buildings
+building_hydroponics_farm
+building_food_processing_facility
+building_food_processing_center
+building_mineral_purification_plant
+building_mineral_purification_hub
+building_energy_grid
+building_energy_nexus
+building_resource_silo
+building_bio_reactor
+building_foundry_1
+building_foundry_2
+building_foundry_3
+building_factory_1
+building_factory_2
+building_factory_3
+building_refinery
+building_chemical_plant
+building_crystal_plant
+building_nanite_transmuter
+building_ministry_production
+building_production_center
+building_mote_harvesters
+building_gas_extractors
+building_crystal_mines
+building_betharian_power_plant
+building_waste_reprocessing_center
+building_crystal_plant_2
+building_affluence_center
+building_nourishment_center
+building_dimensional_fabricator
+building_class_4_singularity
+building_nano_forge
+
+Science Buildings
+building_research_lab_1
+building_research_lab_2
+building_research_lab_3
+building_institute
+building_supercomputer
+building_master_archive
+
+Trade Buildings
+building_commercial_zone
+building_commercial_megaplex
+building_galactic_stock_exchange
+
+Housing Buildings
+building_luxury_residence
+building_paradise_dome
+building_communal_housing
+building_communal_housing_large
+building_drone_storage
+building_drone_megastorage
+building_hive_warren
+building_expanded_warren
+building_slave_huts
+building_fe_dome
+
+Amenities Buildings
+building_holo_theatres
+building_hyper_entertainment_forum
+building_maintenance_depot
+building_xeno_zoo
+
+Unity Buildings
+building_ranger_lodge
+building_autochthon_monument
+building_heritage_site
+building_hypercomms_forum
+building_bureaucratic_1
+building_bureaucratic_2
+building_bureaucratic_3
+building_temple
+building_holotemple
+building_sacred_nexus
+building_uplink_node
+building_network_junction
+building_system_conflux
+building_hive_node
+building_hive_cluster
+building_hive_confluence
+building_sacrificial_temple_1
+building_sacrificial_temple_2
+building_sacrificial_temple_3
+building_galactic_memorial_1
+building_galactic_memorial_2
+building_galactic_memorial_3
+building_simulation_1
+building_simulation_2
+building_simulation_3
+building_corporate_monument
+building_corporate_site
+building_corporate_forum
+building_sensorium_1
+building_sensorium_2
+building_sensorium_3
+building_autocurating_vault
+building_citadel_of_faith
+building_corporate_vault
+building_alpha_hub
+building_organic_sanctuary
+building_organic_paradise
+building_artist_patron
+building_nuumismatic_shrine
+building_empyrean_shrine
+
+Military Buildings
+building_military_academy
+building_dread_encampment
+building_stronghold
+building_fortress
+building_planetary_shield_generator
+building_fe_stronghold
+
+Primitive Buildings
+building_crude_huts
+building_primitive_dwellings
+building_stone_palace
+building_primitive_factory
+building_primitive_mine
+building_primitive_power_plant
+building_primitive_farm
+building_primitive_capital
+building_urban_dwellings
+building_junkheap
+building_great_pyramid
+
+Branch Office Buildings
+building_private_mining_consortium
+building_food_conglomerate
+building_virtual_entertainment_studios
+building_private_shipyards
+building_military_contractors
+building_public_relations_office
+building_private_research_initiative
+building_amusement_megaplex
+building_commercial_forum
+building_corporate_embassy
+building_wildcat_miners
+building_bio_reprocessing_facilities
+building_underground_chemists
+building_wrecking_yards
+building_pirate_haven
+building_underground_clubs
+building_syndicate_outreach_office
+building_illicit_research_labs
+building_smuggling_rings
+building_disinformation_center
+building_subversive_shrine
+building_temple_of_prosperity
+building_executive_retreat
+building_xeno_tourism_agency
+building_imperial_concession_port
+building_knightly_theme_park
+
+Overlord Holdings
+holding_garrison
+holding_orbital_assembly_complex
+holding_propaganda_office
+holding_satellite_campus
+holding_emporium
+holding_aid_agency
+holding_energy_requisitorium
+holding_material_requisitorium
+holding_produce_requisitorium
+holding_splinter_hive
+holding_distributed_processing
+holding_offspring_nest
+holding_offworld_foundry
+holding_overlord_vigil_command
+holding_parasitic_algorithms
+holding_noble_vacation_homes
+holding_dread_outpost
+holding_communal_housing_outreach
+holding_idyllic_bloom
+holding_reemployment_center
+holding_recruitment_office
+holding_park_ranger_lodge
+holding_tree_of_life_sapling
+holding_experimental_crater
+holding_organic_sanctuary
+holding_franchise_headquarters
+holding_sacrificial_shrine
+holding_toxic_bath
+holding_toxic_bath_hive
+holding_toxic_bath_machine
+holding_knight_commandery
