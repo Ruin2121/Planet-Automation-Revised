@@ -1,6 +1,9 @@
+####################################################
+### This file is for documentation purposes only ###
+####################################################
 
 CAPITAL BUILDINGS = {
-	Regular/Mechanical/ = {
+	Regular/Mechanical = {
 		(T1) Reassembled Ship Shelter = {
 			From = Vanilla
 			ID = building_colony_shelter
